@@ -1,0 +1,341 @@
+@charset "UTF-8";
+
+/*-------------------------------------------
+共通設定
+-------------------------------------------*/
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: lightblue;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+
+/* デバッグ（確認後は削除してOK） */
+section#about {
+  outline: 4px dashed red;   /* セクションがDOM上に存在するか確認 */
+  background: rgba(255,200,200,0.15);
+}
+section#about .img {
+  outline: 2px dotted blue;
+}
+section#about .text {
+  outline: 2px dotted green;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+a:hover {
+  opacity: 0.7;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 20px;
+  margin: 0 auto;
+}*/
+
+/*-------------------------------------------
+ヘッダー
+-------------------------------------------*/
+#header {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+#header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+
+#header .logo img {
+  width: 120px;
+}
+
+#header nav ul {
+  display: flex;
+  gap: 30px;
+}
+#header nav a {
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  position: relative;
+}
+#header nav a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #222;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+#header nav a:hover::after {
+  width: 100%;
+}
+
+
+#header .contact {
+  background-color: #222;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 24px;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  transition: background-color 0.3s ease;
+}
+#header .contact:hover {
+  background-color: #555;
+}
+
+/*-------------------------------------------
+Mainvisual
+-------------------------------------------*/
+#mainvisual {
+  position: relative;
+  margin-bottom: 140px;
+}
+#mainvisual img {
+  width: auto;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(90%);
+}
+
+/*-------------------------------------------
+Section Title
+-------------------------------------------*/
+.section-title {
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 60px;
+  position: relative;
+}
+.section-title .en {
+  display: block;
+  font-size: 2.2rem;
+  letter-spacing: 0.2em;
+}
+.section-title .ja {
+  display: block;
+  font-size: 0.9rem;
+  color: #777;
+}
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 3px;
+  background-color: #222;
+  display: block;
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/*-------------------------------------------
+News
+-------------------------------------------*/
+#news {
+  margin-bottom: 140px;
+}
+#news .list {
+  display: flex;
+  gap: 30px;
+}
+#news .list li {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#news .list li:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+#news .list .date-area {
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+#news .list time {
+  font-weight: 500;
+}
+#news .list span {
+  background-color: #222;
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 4px;
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
+/* --- About (強化版) --- */
+section#about {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 140px;
+  /* 安全装置：親要素に明示的表示を与えておく */
+  box-sizing: border-box;
+}
+section#about .img {
+  flex: 1 1 53%;
+  min-width: 320px;
+  max-width: 70%;
+}
+section#about .img img {
+  border-radius: 12px;
+  width: 90%;
+  height: 320px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+section#about .text {
+  flex: 1 1 45%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+section#about .text .section-title { text-align: left; margin-bottom: 30px; }
+
+/*-------------------------------------------
+Business
+-------------------------------------------*/
+#business {
+  margin-bottom: 140px;
+}
+#business .item.horizontal {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+#business .item.horizontal img {
+  width: 160px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+#business .item .info {
+  flex: 1;
+}
+
+#business .item .title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#business .item .desc {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+#business .item .game {
+  font-size: 13px;
+  color: #888;
+}
+#business .item.horizontal img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+/*-------------------------------------------
+Company
+-------------------------------------------*/
+#company {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 140px;
+}
+#company .text {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 60px 40px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+#company .info dt {
+  font-weight: 600;
+  width: 25%;
+  float: left;
+  clear: both;
+  margin-top: 10px;
+}
+#company .info dd {
+  width: 75%;
+  float: left;
+  margin-top: 10px;
+}
+#company .img {
+  flex: 1;
+}
+#company .img img {
+  border-radius: 12px;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/*-------------------------------------------
+Footer
+-------------------------------------------*/
+#footer {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+  padding: 60px 0 20px;
+}
+#footer .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+#footer .info {
+  font-size: 0.8rem;
+  color: #555;
+}
+#footer .copyright {
+  font-size: 0.7rem;
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+}
+#footer .logo img {
+  width: 300px;
+}
