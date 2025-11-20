@@ -35,3 +35,4 @@ document.addEventListener('DOMContentLoaded', () => {
     showImage(current);
   }, 3000); // 3秒ごとに切り替え
 });
+
