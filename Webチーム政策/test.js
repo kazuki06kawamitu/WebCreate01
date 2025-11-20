@@ -36,3 +36,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 3000); // 3秒ごとに切り替え
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const bgVideo = document.getElementById('bg-video');
+  if (bgVideo) {
+    bgVideo.play().catch(err => {
+      console.log("動画の自動再生がブロックされました:", err);
+    });
+  }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const intro = document.getElementById('intro');
+  const site = document.querySelector('.site-content');
+  const video = intro.querySelector('video');
+
+  // 動画が終わったら切り替え
+  video.addEventListener('ended', () => {
+    intro.style.opacity = '0';
+    setTimeout(() => {
+      intro.style.display = 'none';
+      site.style.display = 'block';
+    }, 1000); // フェードアウト後に表示
+  });
+
+  // もし動画がない場合は3秒後に切り替え
+  setTimeout(() => {
+    intro.style.opacity = '0';
+    setTimeout(() => {
+      intro.style.display = 'none';
+      site.style.display = 'block';
+    }, 1000);
+  }, 3000);
+});
