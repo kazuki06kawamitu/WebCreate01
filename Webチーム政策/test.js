@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setInterval(() => {
     current = (current + 1) % images.length;
     showImage(current);
-  }, 3000); // 3秒ごとに切り替え
+  }, 3500); // 3秒ごとに切り替え
 });
 
 document.addEventListener('DOMContentLoaded', () => {
