@@ -19,15 +19,15 @@ body {
 
 /* デバッグ（確認後は削除してOK） */
 section#about {
-  outline: 4px dashed red;   /* セクションがDOM上に存在するか確認 */
+  /*outline: 4px dashed red;   /* セクションがDOM上に存在するか確認 */
   background: rgba(255,200,200,0.15);
 }
-section#about .img {
-  outline: 2px dotted blue;
-}
-section#about .text {
+/*section#about .img {
+  /*outline: 2px dotted blue;
+}*/
+/*section#about .text {
   outline: 2px dotted green;
-}
+}*/
 
 a {
   color: #333;
@@ -58,7 +58,7 @@ li {
 ヘッダー
 -------------------------------------------*/
 #header {
-  background-color: #fff;
+  background-color: #333;
   box-shadow: 0 2px 8px white;
   height: 90px;
   display: flex;
