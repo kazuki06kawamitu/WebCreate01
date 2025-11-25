@@ -109,7 +109,7 @@ li {
 }
 
 #header .contact {
-  background-color: #222;
+  background-color: blue;
   color: #fff;
   padding: 10px 24px;
   border-radius: 24px;
@@ -118,7 +118,7 @@ li {
   transition: background-color 0.3s ease;
 }
 #header .contact:hover {
-  background-color: #555;
+  background-color: #79e0ff;
 }
 
 
