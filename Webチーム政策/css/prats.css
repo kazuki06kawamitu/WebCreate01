@@ -511,6 +511,7 @@ Footer
 .site-content {
   display: none;
 }
+<<<<<<< Updated upstream
 .info dd.contact-link {
   text-align: center;   /* 中央寄せ */
 }
@@ -527,4 +528,47 @@ Footer
 }
 .abo{
   color: #333;
+=======
+
+/* ===== スポンサーロゴ帯 ===== */
+.sponsor-area {
+  position: relative;
+  margin: -100px auto 60px;
+  max-width: 1100px;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.sponsor-strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 24px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.sponsor-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 64px;
+  max-width: 180px;
+  padding: 6px 10px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.sponsor-logo img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+>>>>>>> Stashed changes
 }

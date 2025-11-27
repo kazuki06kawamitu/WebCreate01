@@ -68,3 +68,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }, 3000);
 });
+<<<<<<< Updated upstream
+=======
+
+document.addEventListener('DOMContentLoaded', () => {
+  const logos = [
+    { src: "../img/logo_01.png", alt: "OTV" },
+    { src: "../img/logo_02.png", alt: "CSC" },
+    { src: "../img/logo_03.png", alt: "kbc" },
+    { src: "../img/logo_04.png", alt: "KANEHIDE GROUP" },
+  ];
+
+  const strip = document.getElementById('sponsor-strip');
+  if (!strip) {
+    console.warn('ロゴ表示先の要素（#sponsor-strip）が見つかりません');
+    return;
+  }
+
+  logos.forEach(item => {
+    const wrap = document.createElement('div');
+    wrap.className = 'sponsor-logo';
+
+    const img = document.createElement('img');
+    img.src = item.src;
+    img.alt = item.alt;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+
+    wrap.appendChild(img);
+    strip.appendChild(wrap);
+  });
+});
+>>>>>>> Stashed changes
