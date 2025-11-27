@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>お問い合わせ | Ryukyu Gamer Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #f5f5f5;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #dc3545;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+    .back-link:hover {
+      background-color: #a71d2a;
+    }
+  </style>
+</head>
+<body>
+  <h1>お問い合わせ</h1>
+  <form>
+    <label>氏名
+      <input type="text" name="name" placeholder="例：山田太郎" required>
+    </label>
+
+    <label>メールアドレス
+      <input type="email" name="email" placeholder="例：example@mail.com" required>
+    </label>
+
+    <label>お問い合わせ種類
+      <select name="type">
+        <option>大会参加について</option>
+        <option>スポンサー・協賛について</option>
+        <option>採用について</option>
+        <option>その他</option>
+      </select>
+    </label>
+
+    <label>お問い合わせ内容
+      <textarea name="message" rows="5" placeholder="お問い合わせ内容をご記入ください" required></textarea>
+    </label>
+
+    <button type="submit">送信</button>
+  </form>
+
+  <a href="main.html" class="back-link">トップページに戻る</a>
+</body>
+</html>
