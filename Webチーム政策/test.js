@@ -68,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 1000);
   }, 3000);
 });
-<<<<<<< Updated upstream
-=======
 
 document.addEventListener('DOMContentLoaded', () => {
   const logos = [
@@ -99,4 +97,3 @@ document.addEventListener('DOMContentLoaded', () => {
     strip.appendChild(wrap);
   });
 });
->>>>>>> Stashed changes

@@ -511,24 +511,6 @@ Footer
 .site-content {
   display: none;
 }
-<<<<<<< Updated upstream
-.info dd.contact-link {
-  text-align: center;   /* 中央寄せ */
-}
-
-.info dd.contact-link a {
-  color: red;           /* 赤文字 */
-  font-weight: bold;    /* 太字で強調 */
-  font-size: 1.4em;     /* 文字サイズを少し大きく */
-  text-decoration: none;
-}
-
-.info dd.contact-link a:hover {
-  text-decoration: underline; /* ホバー時に下線 */
-}
-.abo{
-  color: #333;
-=======
 
 /* ===== スポンサーロゴ帯 ===== */
 .sponsor-area {
@@ -570,5 +552,4 @@ Footer
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
->>>>>>> Stashed changes
 }
