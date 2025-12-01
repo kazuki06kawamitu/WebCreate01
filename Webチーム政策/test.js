@@ -70,6 +70,24 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  const logos = [
+    { src: "../img/logo_01.png", alt: "OTV" },
+    { src: "../img/logo_02.png", alt: "CSC" },
+    { src: "../img/logo_03.png", alt: "kbc" },
+    { src: "../img/logo_04.png", alt: "KANEHIDE GROUP" },
+  ];
+
+  const strip = document.getElementById('sponsor-strip');
+  if (!strip) return;
+
+  strip.classList.add("logo-slider");
+
+  const track = document.createElement('div');
+  track.className = "logo-track";
+  strip.appendChild(track);
+document.addEventListener('DOMContentLoaded', () => {
+
   const logos = [
     { src: "../img/logo_01.png", alt: "OTV" },
     { src: "../img/logo_02.png", alt: "CSC" },
@@ -83,6 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  /* -------------------------------
+     ロゴ生成（元コードそのまま）
+  --------------------------------*/
   logos.forEach(item => {
     const wrap = document.createElement('div');
     wrap.className = 'sponsor-logo';
@@ -96,4 +117,124 @@ document.addEventListener('DOMContentLoaded', () => {
     wrap.appendChild(img);
     strip.appendChild(wrap);
   });
+
+  /* -------------------------------
+     無限ループ化（追加）
+  --------------------------------*/
+
+  // DOMが揃ってから複製
+  requestAnimationFrame(() => {
+
+    strip.innerHTML += strip.innerHTML;
+
+    const firstSetWidth = strip.scrollWidth / 2;
+
+    let x = 0;
+    let lastTime = null;
+    const speed = 50; // px / 秒
+
+    function slide(time) {
+      if (!lastTime) lastTime = time;
+
+      const delta = (time - lastTime) / 1000;
+      lastTime = time;
+
+      x += speed * delta;
+
+      if (x >= firstSetWidth) x -= firstSetWidth;
+
+      strip.style.transform =
+        `translate3d(${-Math.round(x)}px,0,0)`;
+
+      requestAnimationFrame(slide);
+    }
+
+    requestAnimationFrame(slide);
+
+  });
+
+});
+
+  // --- ロゴ 1 周ぶん生成 ---
+  function addSet() {
+    logos.forEach(item => {
+
+      const wrap = document.createElement('div');
+      wrap.className = 'sponsor-logo';
+
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.alt;
+      img.loading = 'lazy';
+      img.decoding = 'async';
+
+      wrap.appendChild(img);
+      track.appendChild(wrap);
+
+    });
+  }
+
+  // 最低2周分は用意
+  addSet();
+  addSet();
+
+  // --- すべての画像ロード後に幅を計算 ---
+  function onReady(callback) {
+    const imgs = track.querySelectorAll('img');
+    let loaded = 0;
+
+    imgs.forEach(img => {
+      if (img.complete) {
+        loaded++;
+      } else {
+        img.onload = () => {
+          loaded++;
+          if (loaded === imgs.length) callback();
+        };
+      }
+    });
+
+    if (loaded === imgs.length) callback();
+  }
+
+  onReady(() => {
+
+    // 1周分の実幅を測定
+    let firstSetWidth = 0;
+    for (let i = 0; i < logos.length; i++) {
+      firstSetWidth += track.children[i].getBoundingClientRect().width;
+    }
+
+    // 画面＋1周ぶんに満たない場合は自動増殖
+    while (track.scrollWidth < strip.clientWidth + firstSetWidth) {
+      addSet();
+    }
+
+    startSlide(firstSetWidth);
+  });
+
+  function startSlide(firstSetWidth) {
+
+    let x = 0;
+    const speed = 0.6;
+
+    track.style.willChange = "transform";
+
+    function slide() {
+
+      x += speed;
+
+      if (x >= firstSetWidth) {
+        x -= firstSetWidth;
+      }
+
+      track.style.transform = `translate3d(${-Math.floor(x)}px, 0, 0)`;
+
+
+      requestAnimationFrame(slide);
+    }
+
+    slide();
+  }
+
 });
