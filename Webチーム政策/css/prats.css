@@ -532,7 +532,7 @@ Footer
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(2px);
   border-radius: 8px;
-  overflow-x: auto;
+  /*overflow-x: auto;*/
 }
 
 .sponsor-logo {
