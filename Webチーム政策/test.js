@@ -2,8 +2,8 @@
 
 // スライド画像リスト
 const images = [
-  '../img/IMG_3643.png',
-  '../img/IMG_3878.png'
+  '../img/IMG_3643.jpeg',
+  '../img/IMG_3878.jpeg'
 ];
 
 // 表示対象のimg要素を取得
