@@ -553,3 +553,7 @@ Footer
   max-width: 100%;
   object-fit: contain;
 }
+
+body {
+  overflow-x: hidden;
+}
